@@ -1,139 +1,55 @@
+# House Price Prediction using Machine Learning
 
-# 🏡 House Price Prediction using Machine Learning
+This project predicts house prices using machine learning techniques on the King County housing dataset. It includes data exploration, visualization, feature analysis, and model training using Linear Regression and Gradient Boosting Regressor.
 
-A beginner-friendly project to predict house prices based on various factors such as square footage, number of bedrooms, location, and more. This project walks through data exploration, visualization, linear regression, and gradient boosting to achieve high model accuracy.
+## Files
+- `housesales.ipynb` — main notebook containing the full workflow
+- `kc_house_data.csv` — dataset used for training and analysis
+- `requirements.txt` — project dependencies
 
----
+## Project Workflow
+1. Import libraries and load dataset
+2. Perform exploratory data analysis
+3. Visualize important features such as bedrooms, location, and living area
+4. Train a Linear Regression model
+5. Train a Gradient Boosting Regressor
+6. Compare model performance
 
-## 📂 Project Structure
+## Models Used
+### Linear Regression
+Used as a baseline regression model.
 
-```
+**R² Score:** ~0.732
 
-data/                         # Dataset used for training and testing
-house_price_prediction.ipynb  # Main Jupyter Notebook with all code
-requirements.txt              # Python dependencies
-README.md                     # Project documentation
+### Gradient Boosting Regressor
+Used to capture more complex non-linear relationships in the housing data.
 
-````
+**R² Score:** ~0.919
 
----
+## Key Insights
+- Most houses in the dataset are concentrated around 3–4 bedrooms.
+- Features such as square footage and location strongly influence house prices.
+- Gradient Boosting performed significantly better than Linear Regression, showing that house prices depend on more complex feature interactions than a simple linear model can capture.
 
-## 📊 Dataset
+## Issues Resolved During Implementation
+While running the notebook, some parts of the original code required updates due to newer library versions:
+- Replaced outdated `loss='ls'` with `loss='squared_error'`
+- Removed incorrect plotting call `plt1 = plt()`
+- Fixed `sns.despine` usage by calling `sns.despine()`
+- Adjusted some model input handling using `.values` for compatibility with the current scikit-learn version
 
-This dataset contains details of house listings including:
+## Technologies Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Jupyter Notebook
 
-- Number of bedrooms and bathrooms  
-- Square footage (with and without basement)  
-- Waterfront presence  
-- Location via latitude and longitude  
-- Zipcode  
-- Year built and renovated  
-- Price of the house  
-
-**Source:** _[Add dataset source or link here]_
-
----
-
-## 🧪 Models Used
-
-### 🔹 Linear Regression
-- First model used to understand relationships in data  
-- Achieved ~73% accuracy  
-
-### 🔹 Gradient Boosting Regressor
-- Powerful ensemble model using decision trees  
-- Achieved **~91.94% accuracy**
-
----
-
-## 📈 Key Visualizations
-
-- Most common house types by bedroom count  
-- Price vs. Living Area  
-- Price vs. Location (Latitude and Longitude)  
-- Influence of features like:
-  - Basement area  
-  - Floors  
-  - Condition  
-  - Waterfront  
-
----
-
-## 🔧 Requirements
-
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
-````
-
-### Main Libraries Used
-
-* pandas
-* numpy
-* matplotlib
-* seaborn
-* scikit-learn
-
----
-
-## 🚀 How to Run
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/Shreyas3108/house-price-prediction.git
-cd house-price-prediction
-```
-
-2. **Install dependencies**
-
-```bash
-pip install -r requirements.txt
-```
-
-3. **Run the Jupyter Notebook**
-
-```bash
-jupyter notebook house_price_prediction.ipynb
-```
-
----
-
-## 🎯 Goal
-
-To achieve over **85% prediction accuracy** in estimating house prices using regression techniques.
-
-✅ Final model using Gradient Boosting achieved **91.94% accuracy**.
-
----
-
-## 📚 Learning Points
-
-* Data cleaning and preprocessing
-* Exploratory data analysis
-* Feature engineering
-* Linear Regression vs Gradient Boosting
-* Model evaluation using `r2_score`
-
----
-
-## 📌 Credits
-
-Written by **Shreyas Raghavan**
-Originally published on Medium: *[https://medium.com/data-science/create-a-model-to-predict-house-prices-using-python-d34fe8fad88f]*
-
----
-
-## 🌟 Contribute
-
-Feel free to fork this project, improve the model, or apply it to other real estate datasets!
-
----
-
-## 📬 Contact
-
-For queries or collaborations, reach out on GitHub or comment on the Medium article.
-
-```
-```
+## How to Run
+1. Clone the repository
+2. Create and activate a virtual environment
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
